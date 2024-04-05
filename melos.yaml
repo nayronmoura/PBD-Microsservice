@@ -1,0 +1,11 @@
+name: pbd-microsservice
+
+packages:
+  - packages/**
+
+scripts:
+  explode:
+    exec: dart run
+
+  kill:
+    exec: taskkill /F /PID $(netstat -an -p | findstr /i "15000" | findstr /i "15001" | findstr /v "LISTEN" | findstr /v "PID")
